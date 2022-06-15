@@ -19,5 +19,5 @@ jobs:
       - name: 'Install requirements'
         run: pip install requests
       - name: 'Execute myrepository Script'
-        run: cookie_str=${{ secrets.cookie_str }} plus_key=${{ secrets.plus_key }} python3 test.py
+        run: cookie_str=${{ secrets.cookie_str }} plus_key=${{ secrets.plus_key }} python3 index.py
         

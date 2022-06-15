@@ -1,8 +1,7 @@
 name: myrepository
 on:
-  push:
-    branches: 
-      - master
+  watch:
+    types: [started]
   schedule:
     - cron: '0 14 * * *'
     - cron: '0 4 * * *'

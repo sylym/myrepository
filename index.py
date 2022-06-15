@@ -16,7 +16,7 @@ args = parser.parse_args()
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf8')  # 改变标准输出的默认编码
-
+print(args.timer_name,args.project)
 usr0 = user(cookie_str=args.timer_name, plus_key=args.project)
 
 def pushMsg(url):

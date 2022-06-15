@@ -65,5 +65,5 @@ def main_handler():
     logger.info("签到完成" if r.status_code == 200 else "签到失败，HTTP错误码：" + str(r.status_code))
     print("签到完成" if r.status_code == 200 else "签到失败，HTTP错误码：" + str(r.status_code))
    
-if __name__="__main__":
+if __name__=="__main__":
 	main_handler()

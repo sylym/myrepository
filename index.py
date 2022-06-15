@@ -6,18 +6,12 @@ import logging
 from user import user
 from urllib import request
 from urllib.parse import quote
-import argparse
-
-parser = argparse.ArgumentParser()
-parser.add_argument("-t", "--timer_name", help="timer name")
-parser.add_argument("-p", "--project", help="project name")
-args = parser.parse_args()
+import os
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf8')  # 改变标准输出的默认编码
-print(args.timer_name,args.project)
-usr0 = user(cookie_str=args.timer_name, plus_key=args.project)
+usr0 = user(cookie_str=os.environ["COOKIE_STR"], plus_key=os.environ["PLUS_KEY"])
 
 def pushMsg(url):
     req = request.Request(url)

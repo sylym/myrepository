@@ -18,5 +18,8 @@ jobs:
       - name: 'Install requirements'
         run: pip install requests argparse 
       - name: 'Execute myrepository Script'
-        run: python index.py -t ${{ secrets.COOKIE_STR }} -p ${{ secrets.PLUS_KEY }}
+        env:
+          COOKIE_STR: ${{ secrets.COOKIE_STR }}
+          PLUS_KEY: ${{ secrets.PLUS_KEY }}
+        run: python index.py
         
